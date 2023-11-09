@@ -17,7 +17,7 @@ function App() {
             .catch(e => console.log('Error getting project array. ', e));
     }
 
-    function handleClick() {
+    function handleClickNewProject() {
         fetch('/api/newProject')
             .then(res => res.json())
             .then(data => setProject(data))
@@ -35,7 +35,7 @@ function App() {
         <div id="container">
             <nav id="sidebar">
                 <h2>Moodsight</h2>
-                <button id="newProjectButton" onClick={handleClick}>+ New Project</button>
+                <button id="newProjectButton" onClick={handleClickNewProject}>+ New Project</button>
                 {projectBundle}
             </nav>
             <div id="content">
@@ -46,8 +46,8 @@ function App() {
     else return (
         <div id="container">
             <nav id="sidebar">
-                <h2>Moodsight</h2>
-                <button id="newProjectButton" onClick={handleClick}>+ New Project</button>
+                <h2>Moodsight AI</h2>
+                <button id="newProjectButton" onClick={handleClickNewProject}>+ New Project</button>
                 {projectBundle}
             </nav>
             <div id="content">

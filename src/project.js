@@ -9,7 +9,7 @@ function Project(props) {
 
     useEffect(() => {
         getData();
-    }, [props]);
+    }, [props, data]);
 
     function getData() {
         fetch('/api/getData', {
@@ -40,6 +40,7 @@ function Project(props) {
 
         const formData = new FormData();
         formData.append('file', file);
+        formData.append('project_id', _id);
 
         fetch('/api/processFile', {
             method: 'POST',
@@ -64,7 +65,7 @@ function Project(props) {
 
     if (data) return (
         <>
-            <h1>{project_name}</h1>
+            <h1>{`${project_name} (project ID: ${_id})`}</h1>
             <table id="dataTable">
                 <tr>
                     <th>Sentiment</th>
@@ -77,7 +78,7 @@ function Project(props) {
     )
     else return (
         <>
-            <h1>{project_name}</h1>
+            <h1>{`${project_name} (project ID: ${_id})`}</h1>
             <form onSubmit={handleSubmit}>
                 <input type="file" name="file" onChange={handleFileChange} /><br />
                 <button type="submit">Upload</button>

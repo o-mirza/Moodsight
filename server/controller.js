@@ -47,7 +47,8 @@ controller.getData = (req, res, next) => {
 };
 
 controller.processFile = async (req, res, next) => {
-    const { project_id } = req.body;
+    const project_id = req.body.project_id;
+    console.log(`\n\n\nProject ID: ${project_id}\n\n\n`)
 
     // Read uploaded file
     const file = fs.readFileSync(req.file.path, 'utf-8');
