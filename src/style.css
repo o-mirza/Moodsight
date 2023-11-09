@@ -1,0 +1,121 @@
+body {
+  margin: 0px;
+  background: linear-gradient(to bottom right, #1d2671, #c33764);
+  font-family: sans-serif;
+  color: white;
+}
+
+#container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+#sidebar {
+  width: 350px;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+}
+
+#newProjectButton {
+  background: rgba(0, 150, 0, 1);
+  border: 0;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  text-align: left;
+  padding: 10px;
+  color: white;
+}
+
+#newProjectButton:hover {
+  background: rgba(0, 180, 0, 1);
+}
+
+.navButton {
+  background: rgba(0, 0, 0, 0);
+  border: 0;
+  border-radius: 10px;
+  width: 100%;
+  text-align: left;
+  padding: 10px;
+  color: white;
+}
+
+.navButton:hover {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.navButtonActive {
+  background: rgba(0, 0, 0, 0.3);
+  border: 0;
+  border-radius: 10px;
+  width: 100%;
+  text-align: left;
+  padding: 10px;
+  color: white;
+  font-weight: bold;
+}
+
+#content {
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+}
+
+#dataTable {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  border: 0;
+}
+
+#dataTable th {
+  text-align: left;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+}
+
+#dataTable td {
+  text-align: left;
+  padding: 5px;
+}
+
+#dataTable td.sentiment {
+  text-align: center;
+  padding-left: 20px;
+}
+
+#score {
+  background-color: black;
+  border-radius: 50px;
+  width: 50px;
+  height: 50px;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+#score.score1 {
+  background-color: red;
+}
+
+#score.score2 {
+  background-color: orange;
+  color: black;
+}
+
+#score.score3 {
+  background-color: yellow;
+  color: black;
+}
+
+#score.score4 {
+  background-color: lightgreen;
+  color: black;
+}
+
+#score.score5 {
+  background-color: green;
+}
