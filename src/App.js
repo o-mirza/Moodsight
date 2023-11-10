@@ -18,7 +18,12 @@ function App() {
     }
 
     function handleClickNewProject() {
-        fetch('/api/newProject')
+        const projectName = prompt("Enter project name");
+        fetch('/api/newProject', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ projectName: projectName })
+        })
             .then(res => res.json())
             .then(data => setProject(data))
             .catch(e => console.log('Error creating new project. ', e));
@@ -34,9 +39,14 @@ function App() {
     if (project) return (
         <div id="container">
             <nav id="sidebar">
-                <h2>Moodsight</h2>
-                <button id="newProjectButton" onClick={handleClickNewProject}>+ New Project</button>
-                {projectBundle}
+                <div id="nav">
+                    <h2>Moodsight AI</h2>
+                    <button id="newProjectButton" onClick={handleClickNewProject}>+ New Project</button>
+                    {projectBundle}
+                </div>
+                <div id="user">
+                    <img src="https://imgur.com/l4Jus77.png" height="20" /> omirza@gmail.com ▲
+                </div>
             </nav>
             <div id="content">
                 <Project project={project} />
@@ -46,11 +56,17 @@ function App() {
     else return (
         <div id="container">
             <nav id="sidebar">
-                <h2>Moodsight AI</h2>
-                <button id="newProjectButton" onClick={handleClickNewProject}>+ New Project</button>
-                {projectBundle}
+                <div id="nav">
+                    <h2>Moodsight AI</h2>
+                    <button id="newProjectButton" onClick={handleClickNewProject}>+ New Project</button>
+                    {projectBundle}
+                </div>
+                <div id="user">
+                    <img src="https://imgur.com/l4Jus77.png" height="20" /> omirza@gmail.com ▲
+                </div>
             </nav>
             <div id="content">
+                <br /><br /><br /><br /><br /><br /><br />
                 <h1>No project selected.</h1>
             </div>
         </div>

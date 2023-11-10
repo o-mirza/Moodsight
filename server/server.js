@@ -15,7 +15,7 @@ app.use(express.json());
 app.use('/dist', express.static(path.join(__dirname, '../dist')));
 
 // handle API calls
-app.get('/api/newProject', controller.newProject, (req, res) => {
+app.post('/api/newProject', controller.newProject, (req, res) => {
     return res.status(200).send(res.locals.project)
 })
 

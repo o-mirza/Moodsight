@@ -5,6 +5,10 @@ body {
   color: white;
 }
 
+h1 {
+  margin-bottom: 50px;
+}
+
 #container {
   display: flex;
   flex-direction: row;
@@ -17,6 +21,15 @@ body {
   height: 100vh;
   background: rgba(0, 0, 0, 0.5);
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#user {
+  /* background: rgba(0, 0, 0, 0.5); */
+  margin-bottom: 50px;
+  vertical-align: middle;
 }
 
 #newProjectButton {
@@ -118,4 +131,29 @@ body {
 
 #score.score5 {
   background-color: green;
+}
+
+#fileUpload {
+  border: 5px dotted gray;
+  width: 50%;
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 100px;
+  color: #ccc;
+}
+
+#fileUpload button {
+  padding: 10px;
+  margin-top: 30px;
+  border: 0;
+  border-radius: 10px;
+}
+
+#fileUpload button:hover {
+  background-color: pink;
+}
+
+#fileUpload button:active {
+  transform: scale(0.98);
 }

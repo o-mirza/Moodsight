@@ -65,7 +65,7 @@ function Project(props) {
 
     if (data) return (
         <>
-            <h1>{`${project_name} (project ID: ${_id})`}</h1>
+            <h1>{project_name} <img src="https://imgur.com/TcxbMwv.png" height="20" /> <img src="https://imgur.com/3w0qmyw.png" height="20" /></h1>
             <table id="dataTable">
                 <tr>
                     <th>Sentiment</th>
@@ -78,11 +78,14 @@ function Project(props) {
     )
     else return (
         <>
-            <h1>{`${project_name} (project ID: ${_id})`}</h1>
-            <form onSubmit={handleSubmit}>
-                <input type="file" name="file" onChange={handleFileChange} /><br />
-                <button type="submit">Upload</button>
-            </form>
+            <h1>{project_name} <img src="https://imgur.com/TcxbMwv.png" height="20" /> <img src="https://imgur.com/3w0qmyw.png" height="20" /></h1>
+            <div id="fileUpload">
+                <p>Upload a list of customer verbatims below.<br />Files must be in .txt format.</p><br />
+                <form onSubmit={handleSubmit}>
+                    <input type="file" name="file" onChange={handleFileChange} /><br />
+                    <button type="submit">Upload File</button>
+                </form>
+            </div>
         </>
     )
 }

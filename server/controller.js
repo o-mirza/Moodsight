@@ -7,7 +7,10 @@ const openai = new OpenAI();
 const controller = {};
 
 controller.newProject = (req, res, next) => {
-    db.query("INSERT INTO projects (user_id) VALUES (1) RETURNING _id, project_name")
+    const { projectName } = req.body;
+    console.log(`\n\n\nProject Name: ${projectName}\n\n\n`)
+
+    db.query(`INSERT INTO projects (user_id, project_name) VALUES (1, $1) RETURNING _id, project_name`, [projectName])
         .then(data => {
             res.locals.project = { _id: data.rows[0]._id, project_name: data.rows[0].project_name };
             next();
