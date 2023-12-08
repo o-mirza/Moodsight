@@ -5,7 +5,7 @@ module.exports = {
     mode: process.env.NODE_ENV,
     entry: "./src/index.js",
     output: {
-        path: path.resolve(__dirname, "./dist"),
+        path: path.resolve(__dirname, "./build"),
         filename: "index_bundle.js"
     },
     target: 'web',
